@@ -24,11 +24,13 @@ function errors(total,paid){
         else if(paid < total){
             rupyaa.innerText = "Sorry Paid amount is less then Total amount"
         }
+        else{
+            process(total, paid);
+        }
 }
 
 function process(total, paid){
     clearous();
-    errors(total, paid);
     var leftAmt = paid - total;
     for(var i = 0; i < 8; i++){
         if(parseInt(leftAmt) >= money[i]){
