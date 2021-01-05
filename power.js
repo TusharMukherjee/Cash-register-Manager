@@ -54,8 +54,6 @@ function process(total, paid){
             if(rem == 0){
                 break; 
             }
-            var old;
-            old = total;
         }
     }
 }
