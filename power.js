@@ -7,25 +7,28 @@ var money = [2000, 500, 200, 100, 20, 10, 5, 1];
 
 var a = 0;
 
-function myFunction(){
+function clearous(){
     rupyaa.innerText = "";
 }
 
-function process(total, paid){
-    myFunction();
+function errors(total,paid){
     if(paid == "" || total == "" || paid < 0 || total < 0){
-    try {
-        if(total == "" || paid == "") throw "can't be empty";
-        if(total < 0 || paid < 0) throw "can't be negative";
-      }
-      catch(err) {
-        rupyaa.innerText = "Input " + err;
-      }
-    }
-    else if(paid < total){
-        rupyaa.innerText = "Sorry Paid amount is less then Total amount"
-    }
-    else{
+        try {
+            if(total == "" || paid == "") throw "can't be empty";
+            if(total < 0 || paid < 0) throw "can't be negative";
+          }
+          catch(err) {
+            rupyaa.innerText = "Input " + err;
+          }
+        }
+        else if(paid < total){
+            rupyaa.innerText = "Sorry Paid amount is less then Total amount"
+        }
+}
+
+function process(total, paid){
+    clearous();
+    errors(total, paid);
     var leftAmt = paid - total;
     for(var i = 0; i < 8; i++){
         if(parseInt(leftAmt) >= money[i]){
@@ -46,5 +49,4 @@ function process(total, paid){
             }
         }
     }
-}
 }
