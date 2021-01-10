@@ -1,0 +1,105 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+
+
+
+.area{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0.2rem black solid;
+    height: 40rem;
+}
+
+
+
+
+
+
+
+
+
+.inbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25rem;
+    width: 25rem;
+    margin: 0rem 0rem 0rem 0rem;
+    border: 0.1rem black solid;
+    background-color: coral;
+}
+.inp{
+    height: 2rem;
+}
+#tprice{
+    margin: 0.5rem 0rem 0rem 0rem;
+}
+#paid{
+    margin: 0.5rem 0rem 1rem 0rem;
+}
+#mutton{
+  width: 6rem;  
+}
+
+
+
+
+
+
+
+.noteBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 32rem; */
+    /* width: 28rem; */
+    /* border: 0.2rem black solid; */
+    /* margin: 0rem 0rem 0rem 10rem; */
+}
+.liststyle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 0.1rem green solid;
+    font-size: 1rem;
+    margin: 0.8rem;
+    height: 2rem;
+    width: 20rem;
+    text-align: center;
+}
+
+.noteBlock :first-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* .noteBlock div{
+    transition: width 1s height 1s;
+} */
+
+
+
+/* @keyframes nbc {
+    0% {
+      transform: translatex(3rem);
+    }
+} */
+
+@keyframes lists {
+    from {width: 0rem;
+    height: 0rem;
+font-size: 0rem;}
+    to {width: 20rem;
+    height: 2rem;
+font-size: 1rem;}
+  }
