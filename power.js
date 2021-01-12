@@ -3,15 +3,16 @@ var paidp = document.querySelector("#paid");
 var sub = document.querySelector("#mutton");
 var noteBlocks = document.querySelector(".noteBlock");
 var eror = document.querySelector(".error");
-
+var leftamount = document.querySelector(".leftamt");
 var money = [2000, 500, 200, 100, 20, 10, 5, 1];
 
 var a = 0;
 
  function clearous(){
     noteBlocks.innerText = "";
+    leftamount.innerText = "";
     noteBlocks.style.margin = "0rem 0rem 0rem 0rem";
-    noteBlocks.style.border = "0rem black solid";
+    // noteBlocks.style.border = "0rem";
  }
 
   
@@ -25,29 +26,57 @@ function errors(total,paid){
     // noteBlocks.style.animation = "nbc 2s ease";
     clearous();
     eror.innerHTML = "";
-    if(paid == "" || total == "" || paid < 0 || total < 0){
-        try {
-            if(total == "" || paid == "") throw "can't be empty";
-            if(total < 0 || paid < 0) throw "can't be negative";
-          }
-          catch(err) {
-            eror.innerHTML = "Input " + err;
-          }
-        }
-    else if(paid < total){
+    if(paid == "" || total == ""){
+        eror.innerHTML = "Input can't be empty";
+        console.log("1");
+    }
+    else if(total < 0 || paid < 0){
+        eror.innerHTML = "Input can't be negative"
+        console.log("2");
+    }
+    // if(paid == "" || total == "" || paid < 0 || total < 0){
+    //     try {
+    //         if(total == "" || paid == "") throw "can't be empty";
+    //         if(total < 0 || paid < 0) throw "can't be negative";
+    //       }
+    //       catch(err) {
+    //         eror.innerHTML = "Input " + err;
+    //       }
+    //     }
+    else if(Number(paid) < Number(total)){
         eror.innerHTML = "Sorry Paid amount is less then Total amount";
+        console.log("3");
+    }
+    else if(Number(paid) == Number(total)){
+        eror.innerHTML = "No Amount left";
+        console.log("4");
     }
     else{
         process(total,paid);
-        console.log("noo");
+        console.log( total + paid);
     }
 }
 
 function process(total, paid){
     clearous();
-    noteBlocks.style.margin = "0rem 0rem 0rem 10rem";
-    noteBlocks.style.border = "0.1rem black solid";
+
+    var nbc = window.matchMedia("(max-width: 416px)")
+    if(nbc.matches){
+        noteBlocks.style.margin = "2rem 0rem 0rem 0rem";
+    }
+    else{
+        noteBlocks.style.margin = "0rem 0rem 0rem 10rem";
+    }
+
+
+
+
+
+
+    // noteBlocks.style.margin = "0rem 0rem 0rem 10rem";
+    // noteBlocks.style.border = "0.1rem black solid";
     var leftAmt = paid - total;
+    leftamount.innerText = "Left Amount → " + "₹ " +leftAmt;
     var head = document.createElement('div');
     noteBlocks.appendChild(head);
     head.innerText = " Notes to Return!"

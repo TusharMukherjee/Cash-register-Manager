@@ -7,16 +7,66 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="area">
+    <section>
+        <nav  class="navbar">
+            <div class="logo">CashFlo</div> <div class="shortlink"><a href= "#app" class="white">Go to CashFlo</a></div>
+        </nav>
+    </section>
+
+    <section class="home">
+        <div class="intro">
+            WELCOME TO YOUR OWN DIGITAL CASHFLO
+            <div class="rect"></div>
+            <div>
+            <button type="button" class="navbutton"><a href = "#app">Go to CashFlo</a></button>
+            </div>
+        </div>
+        <div class="imageshall">
+            <img src="iconmonstr-currency-25.svg" alt="Rupees" class="image">
+            <div class="circle"></div>
+        </div>
+    </section>
+
+
+    <section class="area" id="app">
     <section class="inbox">
-    <input type="number" id="tprice" class="inp" placeholder="Total Amount">
-    <input type="number" id="paid" class="inp" placeholder="Paid Amount">
-    <button type =  "button" id="mutton" onclick="errors(document.getElementById('tprice').value,document.getElementById('paid').value)">Submit</button>
+
+
+        <div class = "form">
+            <input type="number" id="tprice" class="inp" name="Total Amount" required>
+            <label for="Total Amount" class="label-name">
+                <span class="content-name">Total Amount</span>
+            </label>
+        </div>
+        
+        <div class="form">
+            <input type="number" id="paid" class="inp" name="Paid Amount" required>
+            <label for="Paid Amount" class="label-name">
+                <span class="content-name">Paid Amount</span>
+            </label>
+        </div>
+
+    
+    <button type = "button" id="mutton" onclick="errors(document.getElementById('tprice').value,document.getElementById('paid').value)">Submit</button>
     <small class="error"></small>
+    <small class="leftamt"></small>
     </section>
     <section class="noteBlock"></section>
-    </div>
-    <div class="test"></div>
+    </section>
+    <footer class="foot">
+        <div class="logof">CashFlo</div>
+        <div class = "links">
+            <a href="https://twitter.com/tusharl0?s=08">
+            <img src="twitter.svg" alt="Twitter" class="svglink">
+            </a>
+            <a href="https://www.linkedin.com/in/tushar-mukherjee-3a3a60166/">
+            <img src="linkedin-logo.svg" alt="Linkedin" class="svglink">
+            </a>
+            <a href="https://www.instagram.com/tusharl0?r=nametag">
+            <img src="instagram.svg" alt="Instagram" class="svglink">
+            </a>
+        </div>
+    </footer>
     <script src="power.js" type="text/javascript"></script>
 </body>
 </html>
