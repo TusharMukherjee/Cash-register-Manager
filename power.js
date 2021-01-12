@@ -4,6 +4,8 @@ var sub = document.querySelector("#mutton");
 var noteBlocks = document.querySelector(".noteBlock");
 var eror = document.querySelector(".error");
 var leftamount = document.querySelector(".leftamt");
+
+
 var money = [2000, 500, 200, 100, 20, 10, 5, 1];
 
 var a = 0;
@@ -60,9 +62,13 @@ function errors(total,paid){
 function process(total, paid){
     clearous();
 
-    var nbc = window.matchMedia("(max-width: 416px)")
+    var nbcsmall = window.matchMedia("(max-width: 376px)");
+    var nbc = window.matchMedia("(max-width: 416px)");
     if(nbc.matches){
         noteBlocks.style.margin = "2rem 0rem 0rem 0rem";
+    }
+    else if(nbcsmall){
+        noteBlocks.style.margin = "1.3rem"
     }
     else{
         noteBlocks.style.margin = "0rem 0rem 0rem 10rem";
@@ -100,7 +106,7 @@ function process(total, paid){
             list.style.animationDelay = "2s";
             list.style.animation = "lists 1s ease";
             list.innerHTML = "<img src = \"iconmonstr-currency-25.svg\">";
-            list.innerText = "₹ " + money[i] + " ↔ " + res;
+            list.innerText = "₹ " + money[i] + " → " + res;
             // var list = document.createElement('li');
             // list.innerText = note[i] + " ka " + res;
             
