@@ -150,6 +150,10 @@ input{
     border-top-right-radius: 0.6rem;
 }
 
+input:focus{
+    outline: none;
+}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button{
     -webkit-appearance: none;
