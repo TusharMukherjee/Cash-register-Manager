@@ -146,7 +146,8 @@ input{
     position: relative;
     bottom: -2rem;
     padding: 1.5rem 0rem 1rem 0.4rem;
-    border-radius: 0.6rem 0.6rem 0rem 0rem;
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
 }
 
 input[type=number]::-webkit-inner-spin-button,
