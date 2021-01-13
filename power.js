@@ -17,15 +17,8 @@ var a = 0;
     // noteBlocks.style.border = "0rem";
  }
 
-  
-
 
 function errors(total,paid){
-    // noteBlocks.style.margin = "0rem 0rem 0rem 10rem";
-    // noteBlocks.style.width = "26rem";
-    // noteBlocks.style.border = "0.1rem black solid";
-    // noteBlocks.style.height = "36rem";
-    // noteBlocks.style.animation = "nbc 2s ease";
     clearous();
     eror.innerHTML = "";
     if(paid == "" || total == ""){
@@ -71,16 +64,9 @@ function process(total, paid){
         noteBlocks.style.margin = "1.3rem"
     }
     else{
-        noteBlocks.style.margin = "0rem 0rem 0rem 10rem";
+        noteBlocks.style.margin = "0rem 0rem 5rem 18rem";
     }
 
-
-
-
-
-
-    // noteBlocks.style.margin = "0rem 0rem 0rem 10rem";
-    // noteBlocks.style.border = "0.1rem black solid";
     var leftAmt = paid - total;
     leftamount.innerText = "Left Amount → " + "₹ " +leftAmt;
     var head = document.createElement('div');
@@ -100,17 +86,12 @@ function process(total, paid){
             // var image = document.createElement('img');
             // image.src = 'iconmonstr-currency-25.svg';
 
-
             var list = document.createElement('div');
             list.classList.add("liststyle");
             list.style.animationDelay = "2s";
             list.style.animation = "lists 1s ease";
             list.innerHTML = "<img src = \"iconmonstr-currency-25.svg\">";
             list.innerText = "₹ " + money[i] + " → " + res;
-            // var list = document.createElement('li');
-            // list.innerText = note[i] + " ka " + res;
-            
-
             noteBlocks.appendChild(list);
             console.log(quo.toFixed(0) * money[i] + " " + rem);
             leftAmt = rem;
